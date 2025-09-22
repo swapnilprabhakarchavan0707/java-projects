@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Overall page styling */
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            background-image: url('home.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white; /* Change text color to white for better contrast on dark background */
+        }
+
+        /* Container for the login form */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 40px 50px;
+            width: 100%;
+            max-width: 500px; /* Increase width */
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        h2 {
+            color: #4e73df;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        label {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+            display: block; /* Align labels to the left */
+            text-align: left;
+            width: 100%; /* Make labels take full width */
+        }
+
+        input {
+            font-family: 'Times New Roman', sans-serif;
+            font-size: 18px;
+            padding: 14px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            width: 300%;
+            max-width: 500px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4e73df;
+            box-shadow: 0 0 8px rgba(78, 115, 223, 0.4);
+        }
+
+        button {
+            font-size: 18px;
+            padding: 14px 0;
+            border: none;
+            border-radius: 8px;
+            background-color: #4e73df;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+	    width: 500px;
+        }
+
+        button:hover {
+            background-color: #3b5a9a;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+        .cancel-button {
+            font-size: 18px;
+            padding: 14px 0;
+            border: none;
+            border-radius: 8px;
+            background-color: #f44336; /* Red background for cancel */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cancel-button:hover {
+            background-color: #d32f2f;
+            transform: translateY(-2px);
+        }
+
+        .cancel-button:active {
+            transform: translateY(2px);
+        }
+
+        /* Link styling */
+        .login-container a {
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .login-container a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            input {
+                font-size: 14px;
+                padding: 12px 14px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px 0;
+            }
+
+            .cancel-button {
+                font-size: 16px;
+                padding: 12px 0;
+            }
+        }
+    </style>
+    <script>
+        // Function to clear the form fields
+        function clearForm() {
+            document.getElementById("loginForm").reset();
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" action="login.jsp" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <div>
+                <button type="submit" style="font-family:times new roman" >Login</button>
+            </div>
+            <div>
+                <button type="button" class="cancel-button" style="font-family:times new roman" onclick="clearForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
